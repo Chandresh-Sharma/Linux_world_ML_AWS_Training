@@ -22,7 +22,7 @@ def myOSLaunch():                                  #(Defines a function named 'm
 
 def OSTerminate():                                 #(Defines a function named 'OSTerminate' which will be responsible for terminating the most recently launched EC2 instance.)
     osdelete = allOS.pop()                         #(Removes and retrieves the last element from the 'allOS' list and assigns it to the 'osdelete' variable. This represents the ID of the instance to be terminated.)
-    ec2.instance.filter(InstanceId=[osdelete]).terminate() #(Uses the 'filter' method of the EC2 resource object to filter instances based on the instance ID ('osdelete'). Then, the 'terminate' method is called to terminate the filtered instance.)
+    response = ec2.instances.filter(InstanceId=[osdelete]).terminate() #(Uses the 'filter' method of the EC2 resource object to filter instances based on the instance ID ('osdelete'). Then, the 'terminate' method is called to terminate the filtered instance.)
     print("total os:", len(allOS))                 #(Prints the total number of instances remaining in the allOS list after termination.)
     
 
