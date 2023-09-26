@@ -12,7 +12,7 @@ def myOSLaunch():                                  #(Defines a function named 'm
             MinCount=1,
             MaxCount=1,
             InstanceType="t2.micro",
-            SecurityGroupIds=[ "sg-001319ebd08a4cadb" ] 
+            SecurityGroupIds=[ "sg-ID" ] 
         )
     myid = instances[0].id                         #(Retrieves the ID of the first instance from the instances list and assigns it to the variable 'myid'.)
     allOS.append(myid)                             #(Appends the 'myid' value to the 'allOS' list, storing the ID of the launched instance.)
